@@ -98,7 +98,7 @@ function ChatScreen({ chat, messages }) {
     /**then we go into collection of chats and go 
      * into the router query of id which is what 
      * tells which chat we are in and add in the
-     * timestamp of whereever they are in the world
+     * timestamp of whereever they are in the world,
      * their message with user email and photo url 
     */
     db.collection("chats").doc(router.query.id).collection("messages").add({
@@ -134,13 +134,12 @@ function ChatScreen({ chat, messages }) {
             <p>Last Active: {" "}
               {recipient?.lastSeen?.toDate() ? (
                 <TimeAgo datetime={recipient?.lastSeen?.toDate()} />
-              ) : (
-                "Unavailable"
-              )}
+              ) : "Unavailable"}
             </p>
           ) : (
             <p>Loading Last Active...</p>
           )}
+          {console.log(new Date(recipient?.lastSeen?.toDate().toUTCString()))}
         </HeaderInformation>
 
         <HeaderIcons>

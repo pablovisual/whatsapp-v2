@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }) {
       /**when the user logs in for either the first time
        * or every time it updates info and detail and use later on
       */
-      db.collection("user").doc(user.uid).set({
+      db.collection("users").doc(user.uid).set({
         email: user.email,
         lastSeen: firebase.firestore.FieldValue.serverTimestamp(),
         photoURL: user.photoURL,
