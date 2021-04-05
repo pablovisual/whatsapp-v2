@@ -139,7 +139,6 @@ function ChatScreen({ chat, messages }) {
           ) : (
             <p>Loading Last Active...</p>
           )}
-          {console.log(new Date(recipient?.lastSeen?.toDate().toUTCString()))}
         </HeaderInformation>
 
         <HeaderIcons>
